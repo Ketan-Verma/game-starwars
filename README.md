@@ -1,3 +1,3 @@
 # game-starwars
 
-[click here to play](https://link-url-here.org)
+[click here to play](https://ketan-verma.github.io/game-starwars/)
