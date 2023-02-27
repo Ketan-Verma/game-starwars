@@ -2,6 +2,7 @@
 // subscribe to "Ketan Codes" on youtube
 let SCENE = 2;
 let LEVEL = 1;
+let score = 0;
 let star = [];
 let hero;
 let bullets = [];
@@ -58,20 +59,20 @@ function menu() {
         mySound.play();
     }
 }
+
 // this will reset game
 function reset() {
     LEVEL = 0;
+    score = 0;
     hero = new Hero();
     bullets = [];
     enemy = [];
     fireballs = [];
-    enemy.push(new Enemy(100, -50));
-    enemy.push(new Enemy(200, -50));
-    enemy.push(new Enemy(300, -50));
+    enemy.push(new Enemy(100, 50));
+    enemy.push(new Enemy(200, 50));
+    enemy.push(new Enemy(300, 50));
     SCENE = 2;
 }
-
-
 
 // this is forever loop
 function draw() {
@@ -116,6 +117,7 @@ function game() {
         element.show();
         if (element.h < 0) {
             enemy.splice(i, 1);
+            score+=100;
         }
     }
     if (enemy.length == 0 && !waiting) {
@@ -140,7 +142,13 @@ function game() {
     textSize(32);
     fill(155, 355, 56);
     textAlign(LEFT);
-    text(LEVEL, 10, 30)
+    text(score, 10, 30)
+    pop();
+    push();
+    textSize(20);
+    fill(155, 355, 56);
+    textAlign(LEFT);
+    text("Level "+LEVEL, 10, 50)
     pop();
 
 }
@@ -158,18 +166,7 @@ function menu() {
         mySound.play();
     }
 }
-// this will reset game
-function reset() {
-    LEVEL = 0;
-    hero = new Hero();
-    bullets = [];
-    enemy = [];
-    fireballs = [];
-    enemy.push(new Enemy(100, 50));
-    enemy.push(new Enemy(200, 50));
-    enemy.push(new Enemy(300, 50));
-    SCENE = 2;
-}
+
 
 
 
