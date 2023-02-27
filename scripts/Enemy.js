@@ -10,9 +10,14 @@ class Enemy {
     }
     show() {
         // enemy movement
-        if(this.y<50){
+        if(this.y+150>hero.y){
+            this.y = hero.y-150;
+            this.x += Math.cos(this.angle)*this.speed;
+        }
+        else if(this.y<50){
             this.y+=2;
-        }else{
+        }
+        else{
             this.x += Math.cos(this.angle)*this.speed;
             this.y += Math.sin(this.angle)*this.speed;
         }
