@@ -193,7 +193,10 @@ class Hero {
         pop();
         
         //resets game when health becomes zero 
-        if (this.h <= 0) reset();
+        if (this.h <= 0){
+            reset();
+            SCENE=2;
+        }
         
         // shows life of hero
         push();
