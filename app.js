@@ -22,7 +22,7 @@ function preload() {
     title1 = loadImage("./assets/maintitle.png");
     title2 = loadImage("./assets/title.png")
     soundFormats('mp3', 'ogg');
-     mySound = loadSound('./assets/Promod.mp3');
+     mySound = loadSound('./assets/Promod1.mp3');
      
 }
 
