@@ -19,8 +19,11 @@ function preload() {
     heart1 = loadImage("./assets/heart1.png")
     heart2 = loadImage("./assets/heart2.png")
     heart = heart1;
-    title1 = loadImage("./assets/maintitle.png")
+    title1 = loadImage("./assets/maintitle.png");
     title2 = loadImage("./assets/title.png")
+    soundFormats('mp3', 'ogg');
+     mySound = loadSound('./assets/Promod.mp3');
+     
 }
 
 function setup() {
@@ -50,6 +53,7 @@ function menu(){
     text("Click to Play",width/2,height/2);
     if(mouseIsPressed){
         SCENE=1;
+        mySound.play();
     }
 }
 // this will reset game
